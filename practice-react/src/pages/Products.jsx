@@ -30,7 +30,7 @@ export default function Products() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/products');
+      const response = await axios.get('http://18.218.247.69:3000/api/products');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -39,7 +39,7 @@ export default function Products() {
 
   const fetchCart = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/cart');
+      const response = await axios.get('http://18.218.247.69:3000/api/cart');
       setCart(response.data.items);
       calculateSelectedTotalPrice(response.data.items);
     } catch (error) {
@@ -49,7 +49,7 @@ export default function Products() {
 
   const fetchWishlist = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/wishlist');
+      const response = await axios.get('http://18.218.247.69:3000/api/wishlist');
       setWishlist(response.data.items.map(item => item._id));
     } catch (error) {
       console.error('Error fetching wishlist:', error);
@@ -68,7 +68,7 @@ export default function Products() {
       if (existingItem) {
         await updateQuantity(product._id, existingItem.count + 1);
       } else {
-        await axios.put('http://localhost:3000/api/cart', { productId: product._id, count: 1 });
+        await axios.put('http://18.218.247.69:3000/api/cart', { productId: product._id, count: 1 });
         const updatedCart = [...cart, { productId: product, count: 1 }];
         setCart(updatedCart);
         calculateSelectedTotalPrice(updatedCart);
@@ -81,7 +81,7 @@ export default function Products() {
   const updateQuantity = async (productId, count) => {
     try {
       if (count <= 0) {
-        await axios.delete(`http://localhost:3000/api/cart/${productId}`);
+        await axios.delete(`http://18.218.247.69:3000/api/cart/${productId}`);
         const updatedCart = cart.filter(item => item.productId._id !== productId);
         setCart(updatedCart);
         calculateSelectedTotalPrice(updatedCart);
@@ -101,10 +101,10 @@ export default function Products() {
   const toggleWishlist = async (product) => {
     try {
       if (wishlist.includes(product._id)) {
-        await axios.delete(`http://localhost:3000/api/wishlist/${product._id}`);
+        await axios.delete(`http://18.218.247.69:3000/api/wishlist/${product._id}`);
         setWishlist(wishlist.filter(id => id !== product._id));
       } else {
-        await axios.post('http://localhost:3000/api/wishlist', { productId: product._id });
+        await axios.post('http://18.218.247.69:3000/api/wishlist', { productId: product._id });
         setWishlist([...wishlist, product._id]);
       }
     } catch (error) {

@@ -26,7 +26,7 @@ export default function Cart() {
   // Fetch cart items and calculate total price on load
   const fetchCart = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/cart');
+      const response = await axios.get('http://18.218.247.69:3000/api/cart');
       setCart(response.data.items);
       calculateTotalPrice(response.data.items);
     } catch (error) {
@@ -59,13 +59,13 @@ export default function Cart() {
     try {
       if (count <= 0) {
         // Remove item from the cart if count is zero
-        await axios.delete(`http://localhost:3000/api/cart/${productId}`);
+        await axios.delete(`http://18.218.247.69:3000/api/cart/${productId}`);
         const updatedCart = cart.filter(item => item.productId._id !== productId);
         setCart(updatedCart);
         calculateTotalPrice(updatedCart); // Recalculate total price if needed
       } else {
         // Update the quantity if count is greater than zero
-        await axios.put('http://localhost:3000/api/cart', { productId, count });
+        await axios.put('http://18.218.247.69:3000/api/cart', { productId, count });
         const updatedCart = cart.map(item =>
           item.productId._id === productId ? { ...item, count } : item
         );
@@ -81,7 +81,7 @@ export default function Cart() {
   // Remove from cart
   const removeFromCart = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/cart/${productId}`);
+      await axios.delete(`http://18.218.247.69:3000/api/cart/${productId}`);
       const updatedCart = cart.filter(item => item.productId._id !== productId);
       setCart(updatedCart);
       calculateTotalPrice(updatedCart);
