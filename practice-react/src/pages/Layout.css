@@ -1,0 +1,110 @@
+/* Layout for navigation and content */
+.navbar {
+  background-color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffa500;
+}
+
+/* Main content styling */
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Page heading */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Navigation bar styling */
+.navbar {
+  background-color: #4CAF50; /* A fresh green color */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.navbar-logo h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.logo-icon {
+  font-size: 1.8em;
+  color: #ffa500;
+}
+
+/* Navbar links styling */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffa500; /* Orange color for hover effect */
+}
+
+.nav-icon {
+  font-size: 1.2em;
+}
+
+/* Main content styling */
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Page heading */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
