@@ -25,7 +25,7 @@ export default function Wishlist() {
 
   const fetchWishlist = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/wishlist');
+      const response = await axios.get('http://18.218.247.69:3000/api/wishlist');
       setWishlist(response.data.items);
     } catch (error) {
       console.error('Error fetching wishlist:', error);
@@ -34,7 +34,7 @@ export default function Wishlist() {
 
   const removeFromWishlist = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/wishlist/${productId}`);
+      await axios.delete(`http://18.218.247.69:3000/api/wishlist/${productId}`);
       setWishlist(wishlist.filter(item => item._id !== productId));
     } catch (error) {
       console.error('Error removing from wishlist:', error);
